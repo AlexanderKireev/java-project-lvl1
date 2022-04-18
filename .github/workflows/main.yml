@@ -10,5 +10,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      
+      - name: Set up openJDK
+        uses: actions/setup-java@v1
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      
       - name: Build with Gradle
         run: make build 
