@@ -14,7 +14,7 @@ public class Calc {
         for (var i = 1; i <= numberOfQuestions; i++) {
             // задаем три случайных числа от 0 до 100 в массив randNum
             // первое - для генерации оператора, еще два - для генерации операндов:
-            int[] randNum = {Calc.getRandom(), Calc.getRandom(), Calc.getRandom()};
+            int[] randNum = {getRandom(), getRandom(), getRandom()};
             if (randNum[0] > 2 * randSign) { // если первое рандомное число > 66, будет умножение
                 sign = "*";
                 resultOfCalc = randNum[1] * randNum[2];

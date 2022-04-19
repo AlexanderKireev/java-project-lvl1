@@ -2,6 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
 
 public class App {
     public static void main(String[] args) {
@@ -12,6 +13,7 @@ public class App {
             + "1 - Greet\n"
             + "2 - Even\n"
             + "3 - Calc\n"
+            + "4 - GCD\n"
             + "0 - Exit\n"
             + "Your choice: ");
         String number = sc.nextLine();
@@ -23,6 +25,8 @@ public class App {
             yourArray = Even.yourQuestion();
         } else if (number.equals("3")) {
             yourArray = Calc.yourQuestion();
+        } else if (number.equals("4")) {
+            yourArray = GCD.yourQuestion();
         } else {
             return;
         }

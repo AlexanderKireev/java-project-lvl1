@@ -7,3 +7,5 @@
 [![asciicast](https://asciinema.org/a/488451.svg)](https://asciinema.org/a/488451)
 ### Step 6 of Project:
 [![asciicast](https://asciinema.org/a/488478.svg)](https://asciinema.org/a/488478)
+### Step 7 of Project:
+[![asciicast](https://asciinema.org/a/488494.svg)](https://asciinema.org/a/488494)
