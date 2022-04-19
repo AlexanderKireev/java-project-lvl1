@@ -11,11 +11,10 @@ public class Engine {
         if ("Great".equals(yourArray[0])) {
             return;
         }
-        final int quesTitle = 6; // заголовок вопроса содержится в строке 7 массива
-        System.out.println(yourArray[quesTitle]);
+        System.out.println(yourArray[0]); // заголовок вопроса содержится в строке 0 массива
         final int numberOfQuestions = 3; // количество вопросов всегда = 3
-        for (var i = 0; i < numberOfQuestions; i++) {
-            System.out.println("Question: " + yourArray[i]); // выодим 1, 2 и 3 значения массива (вопросы)
+        for (var i = 1; i <= numberOfQuestions; i++) {
+            System.out.println("Question: " + yourArray[i]); // выводим 1, 2 и 3 значения массива (вопросы)
             System.out.print("Your answer: ");
             String answer = sc.nextLine(); // присваиваем ответ
             // сравниваем ответ с 4, 5 и 6 значениями массива (ответы):
