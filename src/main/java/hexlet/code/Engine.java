@@ -29,4 +29,15 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
+    public static int getRand(String min, String max) {
+        return Integer.parseInt(min) + (int) (Math.random() * (Integer.parseInt(max) - Integer.parseInt(min) + 1));
+    }
+    public static int numQwsAns() {
+        final int numQwsAndAns = 7; // количество вопросов и ответов + формулировка вопроса
+        return numQwsAndAns;
+    }
+    public static int numQws() {
+        final int numQues = 3; // количество вопросов в проекте (всегда 3)
+        return numQues;
+    }
 }
