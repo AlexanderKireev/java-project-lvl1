@@ -1,6 +1,6 @@
 package hexlet.code;
 import java.util.Scanner;
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
 
 public class App {
     public static void main(String[] args) {
