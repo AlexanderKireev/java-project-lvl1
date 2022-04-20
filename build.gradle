@@ -13,7 +13,7 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.42.0'
     id 'io.freefair.lombok' version '6.4.2'
     id 'jacoco'
-    id 'net.ltgt.errorprone' version '2.0.2'
+    /*id 'net.ltgt.errorprone' version '2.0.2'*/
 }
 
 group = 'io.hexlet'
@@ -46,7 +46,7 @@ dependencies {
             'org.assertj:assertj-core:3.22.0'
     )
 
-    errorprone 'com.google.errorprone:error_prone_core:2.13.0'
+   /* errorprone 'com.google.errorprone:error_prone_core:2.13.0'*/
 }
 
 test {

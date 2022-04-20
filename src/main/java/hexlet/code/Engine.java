@@ -8,21 +8,20 @@ public class Engine {
             + "May I have your name? ");
         String name = sc.nextLine(); // присваиваем введенное имя пользователя
         System.out.println("Hello, " + name + "!");
-        if ("Great".equals(yourArray[0])) {
+        if ("Great".equals(yourArray[0])) { // если в 0 ячейке массива Great, пользователь ввел 1 игру
             return;
         }
         System.out.println(yourArray[0]); // заголовок вопроса содержится в строке 0 массива
-        final int numberOfQuestions = 3; // количество вопросов всегда = 3
-        for (var i = 1; i <= numberOfQuestions; i++) {
+        for (var i = 1; i <= numQws(); i++) { // количество вопросов всегда = 3
             System.out.println("Question: " + yourArray[i]); // выводим 1, 2 и 3 значения массива (вопросы)
             System.out.print("Your answer: ");
             String answer = sc.nextLine(); // присваиваем ответ
             // сравниваем ответ с 4, 5 и 6 значениями массива (ответы):
-            if (answer.equals(yourArray[i + numberOfQuestions])) {
+            if (answer.toLowerCase().equals(yourArray[i + numQws()])) { // можно использовать верхний регистр в ответах
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(."
-                    + " Correct answer was '" + yourArray[i + numberOfQuestions] + "'.\n"
+                    + " Correct answer was '" + yourArray[i + numQws()] + "'.\n"
                     + "Let's try again, " + name + "!");
                 return;
             }
@@ -32,11 +31,11 @@ public class Engine {
     public static int getRand(String min, String max) {
         return Integer.parseInt(min) + (int) (Math.random() * (Integer.parseInt(max) - Integer.parseInt(min) + 1));
     }
-    public static int numQwsAns() {
+    public static int numQwsAns() { // борьба с магическими числами((
         final int numQwsAndAns = 7; // количество вопросов и ответов + формулировка вопроса
         return numQwsAndAns;
     }
-    public static int numQws() {
+    public static int numQws() { // борьба с магическими числами((
         final int numQues = 3; // количество вопросов в проекте (всегда 3)
         return numQues;
     }
