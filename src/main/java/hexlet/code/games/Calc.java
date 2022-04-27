@@ -5,7 +5,7 @@ import static hexlet.code.Engine.testing;
 public class Calc {
     public static void yourQuestion() {
         int resultOfCalc; // результат калькуляции
-        int randNumber1;
+        int randNumber1; // codeclimate требует объединит все в одну строку, а Linter не дает!!!
         int randNumber2;
         int randOper;
         final int q = 3; // всего вопросов в проекте
