@@ -1,24 +1,22 @@
 package hexlet.code.games;
 import static hexlet.code.Engine.getRand;
-import static hexlet.code.Engine.numQwsAns;
-import static hexlet.code.Engine.numQws;
+import static hexlet.code.Engine.testing;
 
 public class GCD {
-    public static String[] yourQuestion() {
-        // создаем массив из 7 строк: с 1 по 3 - вопросы, с 4 по 7 - ответы, нулевая - формулировка вопроса
-        String[] quesAndAnsw = new String[numQwsAns()]; // numQwsAns() = 7 в классе Engine
-        // кладем название вопроса в 0 ячейку массива:
-        quesAndAnsw[0] = "Find the greatest common divisor of given numbers.";
-        for (var i = 1; i <= numQws(); i++) { // numQws() = 3 в классе Engine (количество вопросов)
-            // задаем два случайных числа от 0 до 100 в массив randNum
-            int[] randNum = {getRand("1", "100"), getRand("1", "100")};
-            int resultOfGCD = gcd(randNum[0], randNum[1]); // результат вычисления НОД
-            // вводим вопросы в 1, 2 и 3 строки массива
-            quesAndAnsw[i] = Integer.toString(randNum[0]) + " " + Integer.toString(randNum[1]);
-            // вводим ответы в 4, 5 и 6 строки массива
-            quesAndAnsw[i + numQws()] = Integer.toString(resultOfGCD);
+    public static void yourQuestion() {
+        int randNumber1;
+        int randNumber2;
+        final int q = 3; // всего вопросов в проекте
+        String[][] yourArray = new String[q][2];
+        int index = 0;
+        for (var x : yourArray) {
+            randNumber1 = getRand("1", "100");
+            randNumber2 = getRand("1", "100");
+            yourArray[index][0] = Integer.toString(randNumber1) + " " + Integer.toString(randNumber2);
+            yourArray[index][1] = Integer.toString(gcd(randNumber1, randNumber2));
+            index++;
         }
-        return quesAndAnsw;
+        testing(yourArray, "Find the greatest common divisor of given numbers.");
     }
     public static int gcd(int a, int b) {
         return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
