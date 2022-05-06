@@ -1,21 +1,23 @@
 package hexlet.code.games;
-import static hexlet.code.Engine.getRand;
+import static hexlet.code.Getrandom.getRand;
 import static hexlet.code.Engine.testing;
+import static hexlet.code.Qw.getQw;
 
 public class Calc {
     public static void yourQuestion() {
-        int resultOfCalc; // результат калькуляции
-        int randNumber1; // codeclimate требует объединит все в одну строку, а Linter не дает!!!
-        int randNumber2;
-        int randOper;
-        final int q = 3; // всего вопросов в проекте
-        String[][] yourArray = new String[q][2];
+        int resultOfCalc = 0; // результат калькуляции
+        int randNumber1 = 0;
+        int randNumber2 = 0;
+        int randOper = 0;
+        final int max = 100;
+        final int q = 3; // количестов операторов (+, - и *)
+        String[][] yourArray = new String[getQw()][2];
         String sign; // знак +, - или *
         int index = 0;
         for (var x : yourArray) {
-            randNumber1 = getRand("1", "100");
-            randNumber2 = getRand("1", "100");
-            randOper = getRand("1", "3");
+            randNumber1 = getRand(1, max);
+            randNumber2 = getRand(1, max);
+            randOper = getRand(1, q);
             if (randOper == 1) { // если 1, будет умножение
                 sign = "*";
                 resultOfCalc = randNumber1 * randNumber2;

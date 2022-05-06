@@ -1,15 +1,16 @@
 package hexlet.code.games;
-import static hexlet.code.Engine.getRand;
+import static hexlet.code.Getrandom.getRand;
+import static hexlet.code.Qw.getQw;
 import static hexlet.code.Engine.testing;
 
 public class Prime {
     public static void yourQuestion() {
         int randomNumber;
-        final int q = 3; // всего вопросов в проекте
-        String[][] yourArray = new String[q][2];
+        String[][] yourArray = new String[getQw()][2];
         int index = 0;
+        final int max = 100;
         for (var x : yourArray) {
-            randomNumber = getRand("1", "100");
+            randomNumber = getRand(1, max);
             yourArray[index][0] = Integer.toString(randomNumber);
             yourArray[index][1] = isPrime(randomNumber);
             index++;
