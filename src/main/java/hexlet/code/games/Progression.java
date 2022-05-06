@@ -25,7 +25,7 @@ public class Progression {
             // сохраним это значение
             String result = saveElemProgr(progress, posProgr);
             // запустим метод, заменяющий число в случайной позиции posProgr на '..'
-            progress = hideElemProgr(progress, result);
+            progress = hideElemProgr(progress, posProgr);
             // запишем резульататы в массив
             yourArray[index][0] = progress;
             yourArray[index][1] = result;
@@ -47,8 +47,11 @@ public class Progression {
         return progress.toString();
     }
 
-    public static String hideElemProgr(String s, String x) {
-        return s.replace(x, "..");
+    public static String hideElemProgr(String s, int x) {
+        //return s.replace(x, ".."); // так не получилось, заменяет несколько значений
+        String[] numbers = s.split(" ");
+        numbers[x - 1] = "..";
+        return String.join(" ", numbers);
     }
 
     public static String saveElemProgr(String s, int x) {
