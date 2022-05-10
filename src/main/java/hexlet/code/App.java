@@ -21,6 +21,9 @@ public class App {
             "0 - Exit",
             "Your choice: "));
         String number = sc.nextLine();
+        choice(number);
+    }
+    public static void choice(String number) {
         switch (number) {
             case "1":
                 Greet.yourQuestion();
