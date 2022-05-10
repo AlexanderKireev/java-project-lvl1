@@ -5,11 +5,9 @@ import static hexlet.code.Qw.getQw;
 
 public class Calc {
     public static void yourQuestion() {
-        int resultOfCalc = 0; // результат калькуляции
         final int max = 100; // максимальный диапазон для рандомных операндов
         final int q = 3; // количество операторов (+, - и *)
         String[][] yourArray = new String[getQw()][2]; // создадим массив вопросов и ответов
-        String sign; // знак +, - или *
         int index = 0;
         for (var x : yourArray) {
             int randNumber1 = getRand(1, max);
