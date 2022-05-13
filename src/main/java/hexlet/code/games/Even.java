@@ -1,20 +1,20 @@
 package hexlet.code.games;
 import static hexlet.code.Getrandom.getRand;
-import static hexlet.code.Qw.getQw;
 import static hexlet.code.Engine.testing;
+import static hexlet.code.Engine.NUMBEROFQUESTIONS;
 
 public class Even {
     public static void yourQuestion() {
         int randomNumber;
-        String[][] yourArray = new String[getQw()][2];
+        String[][] arrayWithQuestionsAndAnswers = new String[NUMBEROFQUESTIONS][2];
         final int max = 100;
         int index = 0;
-        for (var x : yourArray) {
+        for (var x : arrayWithQuestionsAndAnswers) {
             randomNumber = getRand(1, max);
-            yourArray[index][0] = Integer.toString(randomNumber);
-            yourArray[index][1] = randomNumber % 2 == 0 ? "yes" : "no";
+            arrayWithQuestionsAndAnswers[index][0] = Integer.toString(randomNumber);
+            arrayWithQuestionsAndAnswers[index][1] = randomNumber % 2 == 0 ? "yes" : "no";
             index++;
         }
-        testing(yourArray, "Answer 'yes' if number even otherwise answer 'no'.");
+        testing(arrayWithQuestionsAndAnswers, "Answer 'yes' if number even otherwise answer 'no'.");
     }
 }

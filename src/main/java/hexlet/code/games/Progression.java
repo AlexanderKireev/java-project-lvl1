@@ -1,6 +1,6 @@
 package hexlet.code.games;
 import static hexlet.code.Getrandom.getRand;
-import static hexlet.code.Qw.getQw;
+import static hexlet.code.Engine.NUMBEROFQUESTIONS;
 import static hexlet.code.Engine.testing;
 
 public class Progression {
@@ -15,11 +15,14 @@ public class Progression {
     static final int FIRST2 = 50;
 
     public static void yourQuestion() {
-        String[][] yourArray = new String[getQw()][2]; // массив с вопросами и ответами
+        String[][] arrayWithQuestionsAndAnswers = new String[NUMBEROFQUESTIONS][2];
         int index = 0;
-        for (var x : yourArray) {
+        for (var x : arrayWithQuestionsAndAnswers) {
             // создадим прогрессию (строку) со случайной длиной (от LENGTH1 до LENGTH2 чисел)
-            String progress = generateProgr();
+            int intervalProgr = getRand(INTERVAL1, INTERVAL2);
+            int firstProgr = getRand(FIRST1, FIRST2);
+            int lengthProgr = getRand(LENGTH1, LENGTH2);
+            String progress = generateProgr(intervalProgr, firstProgr, lengthProgr);
             // сгенерируем пропущенную позицию в прогрессии от 1 до длины прогрессии (число пробелов + 1)
             int posProgr = getRand(1, (progress.length() - progress.replace(" ", "").length() + 1));
             // сохраним это значение
@@ -27,17 +30,14 @@ public class Progression {
             // запустим метод, заменяющий число в случайной позиции posProgr на '..'
             progress = hideElemProgr(progress, posProgr);
             // запишем резульататы в массив
-            yourArray[index][0] = progress;
-            yourArray[index][1] = result;
+            arrayWithQuestionsAndAnswers[index][0] = progress;
+            arrayWithQuestionsAndAnswers[index][1] = result;
             index++;
         }
-        testing(yourArray, "What number is missing in the progression?");
+        testing(arrayWithQuestionsAndAnswers, "What number is missing in the progression?");
     }
 
-    public static String generateProgr() {
-        int intervalProgr = getRand(INTERVAL1, INTERVAL2);
-        int firstProgr = getRand(FIRST1, FIRST2);
-        int lengthProgr = getRand(LENGTH1, LENGTH2);
+    public static String generateProgr(int intervalProgr, int firstProgr, int lengthProgr) {
         // заполним прогрессию числами от firstProgr до lengthProgr с интервалом intervalProgr
         var progress = new StringBuilder(Integer.toString(firstProgr));
         for (var i = 1; i < lengthProgr; i++) {

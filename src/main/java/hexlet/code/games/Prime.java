@@ -1,21 +1,21 @@
 package hexlet.code.games;
 import static hexlet.code.Getrandom.getRand;
-import static hexlet.code.Qw.getQw;
+import static hexlet.code.Engine.NUMBEROFQUESTIONS;
 import static hexlet.code.Engine.testing;
 
 public class Prime {
     public static void yourQuestion() {
         int randomNumber;
-        String[][] yourArray = new String[getQw()][2];
+        String[][] arrayWithQuestionsAndAnswers = new String[NUMBEROFQUESTIONS][2];
         int index = 0;
         final int max = 100;
-        for (var x : yourArray) {
+        for (var x : arrayWithQuestionsAndAnswers) {
             randomNumber = getRand(1, max);
-            yourArray[index][0] = Integer.toString(randomNumber);
-            yourArray[index][1] = isPrime(randomNumber);
+            arrayWithQuestionsAndAnswers[index][0] = Integer.toString(randomNumber);
+            arrayWithQuestionsAndAnswers[index][1] = isPrime(randomNumber);
             index++;
         }
-        testing(yourArray, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        testing(arrayWithQuestionsAndAnswers, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
     public static String isPrime(int a) {
         for (var i = 2; i < a; i++) {

@@ -2,17 +2,18 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void testing(String[][] yourArray, String question) {
+    public static final int NUMBEROFQUESTIONS = 3;
+    public static void testing(String[][] arrayWithQuestionsAndAnswers, String question) {
         Scanner sc = new Scanner(System.in);
         System.out.print("\nWelcome to the Brain Games!\n"
             + "May I have your name? ");
         String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
-        if (yourArray.length == 0) {
+        if (arrayWithQuestionsAndAnswers.length == 0) {
             return;
         }
         System.out.println(question);
-        for (var qwsAndAns : yourArray) {
+        for (var qwsAndAns : arrayWithQuestionsAndAnswers) {
             System.out.println("Question: " + qwsAndAns[0]);
             System.out.print("Your answer: ");
             String answer = sc.nextLine();
@@ -26,8 +27,5 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + name + "!");
-    }
-    public static int getRand(String min, String max) {
-        return Integer.parseInt(min) + (int) (Math.random() * (Integer.parseInt(max) - Integer.parseInt(min) + 1));
     }
 }

@@ -1,38 +1,40 @@
 package hexlet.code.games;
 import static hexlet.code.Getrandom.getRand;
 import static hexlet.code.Engine.testing;
-import static hexlet.code.Qw.getQw;
+import static hexlet.code.Engine.NUMBEROFQUESTIONS;
 
 public class Calc {
+    static final int MAX = 100; // максимальный диапазон для рандомных операндов
+    static final int NUMBOFOPERATORS = 3;
     public static void yourQuestion() {
-        final int max = 100; // максимальный диапазон для рандомных операндов
-        final int q = 3; // количество операторов (+, - и *)
-        String[][] yourArray = new String[getQw()][2]; // создадим массив вопросов и ответов
+        String[][] arrayWithQuestionsAndAnswers = new String[NUMBEROFQUESTIONS][2];
         int index = 0;
-        for (var x : yourArray) {
-            int randNumber1 = getRand(1, max);
-            int randNumber2 = getRand(1, max);
-            int randOper = getRand(1, q);
+        for (var x : arrayWithQuestionsAndAnswers) {
+            int randNumber1 = getRand(1, MAX);
+            int randNumber2 = getRand(1, MAX);
+            int randOper = getRand(1, NUMBOFOPERATORS);
             String[] resultCalc = randomCalc(randNumber1, randNumber2, randOper);
-            yourArray[index][0] = String.join(" ",
+            arrayWithQuestionsAndAnswers[index][0] = String.join(" ",
                 Integer.toString(randNumber1),
                 resultCalc[0],
                 Integer.toString(randNumber2));
-            yourArray[index][1] = resultCalc[1];
+            arrayWithQuestionsAndAnswers[index][1] = resultCalc[1];
             index++;
         }
-        testing(yourArray, "What is the result of the expression?");
+        testing(arrayWithQuestionsAndAnswers, "What is the result of the expression?");
     }
-    public static String[] randomCalc(int a, int b, int c) {
-        if (c == 1) { // если 1, будет умножение
-            String[] result = {"*", Integer.toString(a * b)};
+    public static String[] randomCalc(int firstOperand, int secondOperand, int operator) {
+        if (operator == 1) { // если 1, будет умножение
+            String[] result = {"*", Integer.toString(firstOperand * secondOperand)};
             return result;
-        } else if (c == 2) { // если 2, будет вычитание
-            String[] result = {"-", Integer.toString(a - b)};
+        } else if (operator == 2) { // если 2, будет вычитание
+            String[] result = {"-", Integer.toString(firstOperand - secondOperand)};
             return result;
-        } else { // иначе сложение
-            String[] result = {"+", Integer.toString(a + b)};
+        } else if (operator == NUMBOFOPERATORS) { // если 3, будет сложение
+            String[] result = {"+", Integer.toString(firstOperand + secondOperand)};
             return result;
+        } else {
+            throw new RuntimeException("Sorry, used the wrong operand");
         }
     }
 }
