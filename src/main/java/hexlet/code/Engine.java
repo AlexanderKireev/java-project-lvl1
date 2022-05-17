@@ -3,17 +3,11 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int NUMBEROFQUESTIONS = 3;
-    public static void testing(String[][] arrayWithQuestionsAndAnswers, String question) {
+    public static void runGame(String[][] questionsAndAnswers, String question) {
+        String name = App.greeting();
         Scanner sc = new Scanner(System.in);
-        System.out.print("\nWelcome to the Brain Games!\n"
-            + "May I have your name? ");
-        String name = sc.nextLine();
-        System.out.println("Hello, " + name + "!");
-        if (arrayWithQuestionsAndAnswers.length == 0) {
-            return;
-        }
         System.out.println(question);
-        for (var qwsAndAns : arrayWithQuestionsAndAnswers) {
+        for (var qwsAndAns : questionsAndAnswers) {
             System.out.println("Question: " + qwsAndAns[0]);
             System.out.print("Your answer: ");
             String answer = sc.nextLine();
