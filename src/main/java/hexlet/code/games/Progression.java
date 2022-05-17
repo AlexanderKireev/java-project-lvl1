@@ -25,8 +25,8 @@ public class Progression {
             String[] progress = generateProgr(intervalProgr, firstProgr, lengthProgr);
             // сгенерируем пропущенную позицию в прогрессии от 1 до длины прогрессии
             int posProgr = getRand(1, lengthProgr);
-            String result = progress[posProgr];
-            progress[posProgr] = "..";
+            String result = progress[posProgr - 1];
+            progress[posProgr - 1] = "..";
             // запишем резульататы в массив
             qwsAndAns[0] = String.join(" ", progress);
             qwsAndAns[1] = result;
