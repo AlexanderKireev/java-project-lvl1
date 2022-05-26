@@ -4,8 +4,13 @@ import java.util.Scanner;
 public class Engine {
     public static final int NUMBEROFQUESTIONS = 3;
     public static void runGame(String[][] questionsAndAnswers, String question) {
-        String name = App.greeting();
         Scanner sc = new Scanner(System.in);
+        System.out.print("""
+
+                Welcome to the Brain Games!
+                May I have your name?\s""");
+        String name = sc.nextLine();
+        System.out.println("Hello, " + name + "!");
         System.out.println(question);
         for (var qwsAndAns : questionsAndAnswers) {
             System.out.println("Question: " + qwsAndAns[0]);

@@ -24,7 +24,7 @@ public class App {
     }
     public static void choice(String number) {
         switch (number) {
-            case "1" -> greeting();
+            case "1" -> Cli.runGreeting();
             case "2" -> Even.startGame();
             case "3" -> Calc.startGame();
             case "4" -> GCD.startGame();
@@ -33,16 +33,5 @@ public class App {
             default -> {
             }
         }
-    }
-    public static String greeting() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("""
-
-                Welcome to the Brain Games!
-                May I have your name?\s""");
-        String name = sc.nextLine();
-        System.out.println("Hello, " + name + "!");
-        // вернул имя, чтобы использовать его в Engine
-        return name;
     }
 }
