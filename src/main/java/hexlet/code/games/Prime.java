@@ -17,7 +17,10 @@ public class Prime {
         runGame(questionsAndAnswers, question);
     }
     public static String isPrime(int a) {
-        if ((a % 2 == 0 || a < 2) && a != 2) {
+        if (a == 2) {
+            return "yes";
+        }
+        if (a % 2 == 0 || a < 2) {
             return "no";
         }
         final int num3 = 3;
