@@ -12,17 +12,20 @@ public class Prime {
         for (var qwsAndAns : questionsAndAnswers) {
             int randomNumber = getRand(min, max);
             qwsAndAns[0] = Integer.toString(randomNumber);
-            qwsAndAns[1] = isPrime(randomNumber);
+            qwsAndAns[1] = isEvenOrLessTwo(randomNumber);
         }
         runGame(questionsAndAnswers, question);
     }
-    public static String isPrime(int a) {
+    public static String isEvenOrLessTwo(int a) {
         if (a == 2) {
             return "yes";
         }
         if (a % 2 == 0 || a < 2) {
             return "no";
         }
+        return isPrime(a);
+    }
+    public static String isPrime(int a) {
         final int num3 = 3;
         for (var i = num3; i * i <= a; i += 2) {
             if (a % i == 0) {
