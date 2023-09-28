@@ -1,6 +1,5 @@
 ##### Hexlet tests and linter status:
 [![Linter Status](https://github.com/AlexanderKireev/java-project-lvl1/workflows/Make-build/badge.svg)](https://github.com/AlexanderKireev/java-project-lvl1/actions)
-<!-- [![Actions Status](https://github.com/AlexanderKireev/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/AlexanderKireev/java-project-lvl1/actions) -->
 [![Actions Status](https://github.com/AlexanderKireev/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/AlexanderKireev/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/39897ff67dcef7944de2/maintainability)](https://codeclimate.com/github/AlexanderKireev/java-project-lvl1/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/39897ff67dcef7944de2/test_coverage)](https://codeclimate.com/github/AlexanderKireev/java-project-lvl1/test_coverage)
